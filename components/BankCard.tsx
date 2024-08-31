@@ -54,4 +54,3 @@ const BankCard = ({
 };
 
 export default BankCard;
-BankCard;
