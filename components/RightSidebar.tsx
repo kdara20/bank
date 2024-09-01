@@ -59,4 +59,3 @@ const RightSidebar = ({ user, transactions, banks }: RightSidebarProps) => {
 };
 
 export default RightSidebar;
-RightSidebar;
