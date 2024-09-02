@@ -1,7 +1,7 @@
 import React from "react";
 
 const Transfer = () => {
-  return <div>Transfer Fund</div>;
+  return <div>Transfer Funds</div>;
 };
 
 export default Transfer;
