@@ -3,13 +3,21 @@ import { Inter, IBM_Plex_Serif } from "next/font/google";
 import Sidebar from "@/components/Sidebar";
 import Image from "next/image";
 import MobileNav from "@/components/MobileNav";
+import { getLoggedInUser } from "@/lib/actions/user.actions";
+import { redirect } from "next/navigation";
+// import { useRouter } from "next/router";
 
-export default function RootLayout({
+export default async function RootLayout({
   children,
 }: Readonly<{
   children: React.ReactNode;
 }>) {
-  const loggedIn = { firstName: "Kevin", lastName: "Dara" };
+  // const loggedIn = { firstName: "Kevin", lastName: "Dara" };
+
+  // const router = useRouter();
+  const loggedIn = await getLoggedInUser();
+
+  if (!loggedIn) redirect("/sign-in");
 
   return (
     <main className="flex h-screen w-full font-inter">
