@@ -11,6 +11,11 @@ const Home = async () => {
   //   email: "jsmaster@gmail.com",
   // };
   const loggedIn = await getLoggedInUser();
+
+  if (!loggedIn) {
+    return <div>User data is not available</div>;
+  }
+
   return (
     <section className="home">
       <div className="home-content">

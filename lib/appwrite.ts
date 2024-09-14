@@ -12,7 +12,10 @@ export async function createSessionClient() {
     .setProject(process.env.NEXT_PUBLIC_APPWRITE_PROJECT!);
 
   const session = cookies().get("appwrite-session");
+  console.log("Session value:", session); // Add this line to log the session value
+
   if (!session || !session.value) {
+    console.error("No session found"); // Add this line to log an error message
     throw new Error("No session");
   }
 
